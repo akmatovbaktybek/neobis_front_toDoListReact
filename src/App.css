@@ -1,38 +1,237 @@
-.App {
-  text-align: center;
+body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background-color: #EDECED;
+
+   font-family: Arial, sans-serif;
+   font-size: 16px;
+   line-height: 1.5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+   font: inherit;
+   box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+   padding: 0;
+   border: none;
+   font: inherit;
+   color: inherit;
+   background-color: transparent;
+   cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ol {
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+   max-width: 1130px;
+   padding: 0 15px;
+   margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main {
+   margin-top: 50px;
+}
+
+.main__content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.main__todo {
+   display: flex;
+   flex-direction: column;
+   max-width: 600px;
+}
+
+.todo__username {
+   display: flex;
+
+   font-size: 24px;
+   font-weight: 700;
+}
+
+.todo__username-input {
+   border: none;
+   outline: none;
+   background-color: transparent;
+   margin-left: 5px;
+
+}
+
+.todo__title {
+   margin-top: 20px;
+
+   text-transform: uppercase;
+   font-weight: 700;
+}
+
+.todo__inputbox {
+   margin-top: 5px;
+}
+
+.todo__input {
+   width: 100%;
+   margin-top: 5px;
+   padding: 10px 15px;
+   outline: none;
+   border: none;
+   border-radius: 8px;
+
+   color: grey;
+}
+
+.todo__category {
+   margin-top: 20px;
+}
+
+.todo__category-pickbox {
+   display: flex;
+   justify-content: space-between;
+}
+
+.todo__pickbox-item {
+   margin-top: 5px;
+   width: 220px;
+   background-color: #fff;
+   padding: 60px 0px 20px 0px;
+   border-radius: 8px;
+   text-align: center;
+}
+
+.todo__input-radio {
+   cursor: pointer;
+}
+
+.todo__input-radio {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.todo__input-radio + label {
+	position: relative;
+	cursor: pointer;
+}
+.todo__input-radio + label:before {
+	content: '';
+	position: absolute;
+	top: -40px;
+	left: 30%;
+	width: 22px;
+	height: 22px;
+	border: 2px solid #5E93E9;
+	border-radius: 50%;
+}
+
+.todo__input-radio + label:after {
+	content: '';
+	position: absolute;
+	top: -35px;
+	left: 37%;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #5E93E9;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+	opacity: 0;
+	transition: .2s;
+}
+.todo__input-radio:checked + label:after {
+	opacity: 1;
+}
+
+/* .todo__input-radio:focus + label:before {
+	background-color: #5E93E9;
+} */
+
+.red-radio + label:before {
+	border: 2px solid #D6328E;
+}
+
+.red-radio + label:after {
+	left: 38%;
+	background: #D6328E;
+}
+
+/* .red-radio:focus + label:before {
+	background-color: #D6328E;
+} */
+
+.todo__add-button {
+   margin-top: 20px;
+   padding: 10px 0;
+   width: 100%;
+   background-color: #5E93E9;
+   border-radius: 8px;
+
+   color: #fff;
+   text-align: center;
+
+}
+
+.todo__list-item {
+   margin-top: 15px;
+   padding: 15px;
+   background-color: #fff;
+   border-radius: 20px;
+}
+
+.todo__item-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.todo__task-description {
+   display: flex;
+}
+
+.todo__description-category {
+   width: 22px;
+	height: 22px;
+	border: 2px solid #5E93E9;
+	border-radius: 50%;
+}
+
+.todo__description-text {
+   outline: none;
+   border: none;
+   margin-left: 15px;
+   
+}
+
+.todo__task-button {
+   padding: 5px 10px;
+   border-radius: 5px;
+   color: #fff;
+}
+
+.ok-button {
+   background-color: #109E59;
+}
+
+.done-button {
+   background-color: #C8C8C8;
+}
+
+.edit-button {
+   margin-left: 5px;
+   background-color: #D6328E;
+}
+
+.delete-button {
+   margin-left: 5px;
+   background-color: #D0403C;
+}
+
+.close {
+   color: grey;
+   text-decoration: line-through;
 }
